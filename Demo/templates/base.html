@@ -1,0 +1,125 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <!-- <link rel="shortcut icon" href="{% static "readreddit/images/favicon.ico" %}"> -->
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Summernote css -->
+
+        <link href="{% static "Demo/plugins/summernote/summernote.css" %}" rel="stylesheet" type="text/css" />
+
+        <!-- Select2 -->
+        <link href="{% static "Demo/plugins/select2/css/select2.min.css" %}" rel="stylesheet" type="text/css" />
+
+        <!-- Jquery filer css -->
+
+        <link href="{% static "Demo/plugins/jquery.filer/css/jquery.filer.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" %}" rel="stylesheet" type="text/css" />
+
+
+        <!-- App css -->
+        <link href="{% static "Demo/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/core.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/components.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/icons.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/pages.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/menu.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/css/responsive.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "Demo/plugins/switchery/switchery.min.css" %}" rel="stylesheet" type="text/css" />
+        <script src="{% static "Demo/js/modernizr.min.js" %}"></script>
+
+    </head>
+
+
+    <body>
+
+          {% block Navigation_Bar %}
+          {% endblock %}
+          <div class="wrapper" style="{ margin: 0; padding: 0; border: none; } ">
+              <div class="container">
+
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                          <div class="p-20">
+
+                            {% block stuff %}
+                            {% endblock %}
+
+                          </div> <!-- end p-20 -->
+                      </div> <!-- end col -->
+                  </div>
+                  <!-- end row -->
+
+                  <!-- Footer -->
+                  <footer class="footer text-right">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xs-12 text-center">
+                                  © 2019 Harsh Rajpurohit.
+                              </div>
+                          </div>
+                      </div>
+                  </footer>
+                  <!-- End Footer -->
+
+              </div> <!-- end container -->
+          </div>
+          <!-- end wrapper -->
+
+
+          <!-- jQuery  -->
+          <script src="{% static "Demo/js/jquery.min.js" %}"></script>
+          <script src="{% static "Demo/js/bootstrap.min.js" %}"></script>
+          <script src="{% static "Demo/js/detect.js" %}"></script>
+          <script src="{% static "Demo/js/fastclick.js" %}"></script>
+          <script src="{% static "Demo/js/jquery.blockUI.js" %}"></script>
+          <script src="{% static "Demo/js/waves.js" %}"></script>
+          <script src="{% static "Demo/js/jquery.slimscroll.js" %}"></script>
+          <script src="{% static "Demo/js/jquery.scrollTo.min.js" %}"></script>
+          <script src="{% static "Demo/plugins/switchery/switchery.min.js" %}"></script>
+
+          <!--Summernote js-->
+          <script src="{% static "Demo/plugins/summernote/summernote.min.js" %}"></script>
+
+          <!-- Select 2 -->
+          <script src="{% static "Demo/plugins/select2/js/select2.min.js" %}"></script>
+
+          <!-- Jquery filer js -->
+          <script src="{% static "Demo/plugins/jquery.filer/js/jquery.filer.min.js" %}"></script>
+
+          <!-- page specific js -->
+          <script src="{% static "Demo/pages/jquery.blog-add.init.js" %}"></script>
+
+          <!-- App js -->
+          <script src="{% static "Demo/js/jquery.core.js" %}"></script>
+          <script src="{% static "Demo/js/jquery.app.js" %}"></script>
+
+          <script>
+
+              jQuery(document).ready(function(){
+
+                  $('.summernote').summernote({
+                      height: 240,                 // set editor height
+                      minHeight: null,             // set minimum height of editor
+                      maxHeight: null,             // set maximum height of editor
+                      focus: false                 // set focus to editable area after initializing summernote
+                  });
+                  // Select2
+                  $(".select2").select2();
+
+                  $(".select2-limiting").select2({
+                      maximumSelectionLength: 2
+                  });
+              });
+          </script>
+
+
+    </body>
+</html>

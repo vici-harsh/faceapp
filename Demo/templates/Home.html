@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Home {% endblock %}
+
+
+{% block Navigation_Bar %}
+
+<!-- Navigation Bar-->
+<header id="topnav">
+  <!-- add navbar hear -->
+  <!-- {{ Title }} -->
+</header>
+<!-- End Navigation Bar-->
+
+{% endblock %}
+
+{% block stuff %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <div class="form-group m-b-20">
+      <!-- <label for="exampleInputEmail1">Enter Title: {{form.Title}}</label> -->
+      <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter title"> -->
+      name: {{form.Title}}
+
+  </div>
+
+  <div class="form-group m-b-20">
+      <label> Your Image </label>
+      {{form.content_image}}
+      <!-- <input type="file" name="files[]" id="filer_input1"> -->
+  </div>
+
+  <div class="form-group m-b-20">
+      <label>Styling Image</label>
+      <!-- <input type="file" name="files[]" id="filer_input2"> -->
+      {{form.style_image}}
+
+  </div>
+
+  <button type="submit" class="btn btn-success waves-effect waves-light" value="Upload"> Submit </button>
+
+</form>
+
+{% if Final_image %}
+  <p>File Uploaded</p>
+{% endif %}
+
+
+{% endblock %}
