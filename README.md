@@ -1,2 +1,0 @@
-# faceapp
-just fun
